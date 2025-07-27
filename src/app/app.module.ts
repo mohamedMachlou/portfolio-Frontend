@@ -18,7 +18,7 @@ import { CoreModule } from './modules/core/core.module';
     PortfolioModule,
     AdminModule,
     SharedModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [
     provideClientHydration(withEventReplay())

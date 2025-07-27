@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+/* /////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////// */
+/* ////// Portfolio 2025 Created by Mohamed Machlou ///// */
+/* /////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////// */
+
+  
+      
+/* Start Variables  */     
+:root {  
+    --background-primary-color:  #F4F2EE;
+
+}
+/* End Variables  */ 
+
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    caret-color: transparent;
+    margin: 0;
+    padding: 0;
+}  
+
+/* Start Components  */
+button { 
+    width: 180px;
+    height: 35px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-active {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #ffffff;   
+} 
+
+.btn-active:hover {
+    cursor: pointer;
+    background-color: var(--primary-color-hover);
+    color: #ffffff;   
+}
+.btn-deactive {
+    background-color: #969292;
+    color: #807b7b;    
+}
+
+
+/*//////////////////////////////////////////////////////////////*/
+/*/////////////// Start Media Queries */
+/*//////////////////////////////////////////////////////////////*/
+/* Small devices (Portrait phones, 576px and up) */
+@media (min-width: 300px) {
+  .container {
+    /* width: 360px; */
+    width: 100%;
+    /* overflow-x: hidden; */
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    /* width: 576px; */
+    width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    /* width: 768px; */
+    width: 100%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+/* End Media Queries */
