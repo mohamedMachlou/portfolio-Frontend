@@ -110,31 +110,34 @@ button {
 /* Small devices (Portrait phones, 576px and up) */
 @media (min-width: 300px) {
   .container {
-    /* width: 360px; */
     width: 100%;
-    /* overflow-x: hidden; */
+    
   }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .container {
-    /* width: 576px; */
-    width: 100%;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .container {
-    /* width: 768px; */
-    width: 100%;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .container {
-    width: 100%;
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    margin-right: 30px;
   }
 }
 
