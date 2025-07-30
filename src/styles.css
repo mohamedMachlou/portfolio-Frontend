@@ -13,6 +13,9 @@
     --primary-color:  #EF3939;
     --primary-color-hover:  #c92f2f;
 
+    --into-angle-color: #751a1a;
+    --into-angle-color: #912222;
+
 }
 /* End Variables  */ 
 
@@ -49,12 +52,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
 
 .section .title {
     font-weight: 600;
-    font-size: 25px;
+    font-size: 35px;
     margin-bottom: 5px;
     
 }
@@ -62,7 +65,7 @@ body {
 .section .line {
     width: 50px;
     height: 5px;
-    background-color: var(--background-secondary-color);
+    background-color: var(--primary-color);
     border-radius: 4px;  
 }
 /* End Section Component  */
@@ -102,8 +105,25 @@ button {
 /* End Components  */
 
 
+/*  */
+body::-webkit-scrollbar {
+    width: 10px;
+  }
 
+  body::-webkit-scrollbar-track {
+    background: #eee;
+    background: #141414;
+  }
 
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--into-angle-color);
+    border-radius: 10px;
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--into-angle-color);
+  }
+/*  */
 
 
 /*//////////////////////////////////////////////////////////////*/

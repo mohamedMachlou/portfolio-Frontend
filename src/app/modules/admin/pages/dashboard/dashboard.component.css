@@ -15,13 +15,58 @@
         width: 100%;
         height: 100vh;
         background-color: #581C1C;
-        background-color: #451818;
+        background-color: #380f0f;
         color: white;
         padding: 40px 20px 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-top: 150px;
+        position: relative;
+    }
+
+    .top-left {
+        width: 130px;
+        height: 130px;
+        /* background-color: yellow; */
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-top: 2px solid var(--into-angle-color);
+        border-left: 2px solid var(--into-angle-color);
+    }
+
+    .top-right {
+        width: 130px;
+        height: 130px;
+        /* background-color: yellow; */
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 2px solid var(--into-angle-color);
+        border-right: 2px solid var(--into-angle-color);
+    }
+
+    .bottom-left {
+        width: 130px;
+        height: 130px;
+        /* background-color: yellow; */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid var(--into-angle-color);
+        border-left: 2px solid var(--into-angle-color);
+    }
+
+    .bottom-right {
+        width: 130px;
+        height: 130px;
+        /* background-color: yellow; */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-bottom: 2px solid var(--into-angle-color);
+        border-right: 2px solid var(--into-angle-color);
     }
 
     .intro .title {
@@ -172,21 +217,31 @@
 
 
 /* Start About */
+
+.sec-about {
+    background-color: #0D0D0D;
+    color: white;
+}
+
 .container .about {
-    width: 90%;
+    width: 100%;
+    height: calc(100vh - 150px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    padding: 30px 20px;
+    background-color: #0D0D0D;
+    color: white;
+    line-height: 25px;
 }
 
 .container .about .image {
-    width: 550px;
-    height: 550px;
+    width: 450px;
+    height: 450px;
     margin-right: 70px;
-    background-color: var(--background-primary-color);
+    background-color: #161111;
     border-radius: 8px;
-    border: 1px solid rgb(180, 177, 177);
+    border: 0.3px solid rgb(104, 101, 101);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     display: flex;
     justify-content: center;
@@ -194,8 +249,8 @@
 }
 
 .container .about .image .back-one {
-    width: 420px;
-    height: 420px;
+    width: 380px;
+    height: 380px;
     border-radius: 8px;
     background-color: #321818;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -205,8 +260,8 @@
 }
 
 .container .about .image .back-one .back-two {
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
     border-radius: 8px;
     background-color: #5A1F1F;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -217,24 +272,21 @@
 }
 
 .image .back-one .back-two img {
-    width: 270px;
-    height: 270px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     border: 4px solid #EF3939;
     position: absolute;
 }
 
 .container .about .infos {
-    /* border: 1px solid rgb(180, 177, 177); */
     width: 600px;
     min-height: 350px;
     padding: 10px;
-    background-color: var(--background-primary-color);
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-
 }
 
 .container .about .infos .title {
@@ -253,18 +305,67 @@
 .container .about .infos .description {
     width: 100%;
     margin-bottom: 30px;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #aca7a7;
+}
+
+.container .about .infos .projects-intership {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    color: #aca7a7;
+}
+
+.about .infos .projects-intership .info-plus {
+    width: 240px;
+    height: 110px;
+    border: 1px solid rgb(82, 80, 80);
+    border-radius: 8px;
+    background-color: #0F0F0F;
+}
+
+.about .infos .projects-intership .info-plus .number {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.about .infos .projects-intership .info-plus .title {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.about .infos .projects-intership .project .number {
+    color: var(--primary-color);
+}
+
+.about .infos .projects-intership .intership .number {
+    color: rgb(61, 58, 58);
 }
 
 .container .about .infos .info {
     width: 100%;
     margin-bottom: 15px;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 400;
+    font-size: 18px;
     display: flex;
     justify-content: start;
     align-items: center;
+    color: #aca7a7;
 }
 
 .container .about .infos .info .cercle {
@@ -275,13 +376,13 @@
 }
 
 .container .about .infos .info .cercle1 {
-    background-color: var(--background-secondary-color);
+    background-color: var(--primary-color);
 }
 .container .about .infos .info .cercle2 {
   background-color: rgb(119, 94, 89);
 }
 .container .about .infos .info .cercle3 {
-  background-color: rgb(36, 35, 35);
+  background-color: rgb(139, 136, 136);
 }
 /* End About */
 
