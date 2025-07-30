@@ -8,6 +8,170 @@
     /* background-color: #e64848; */
 }
 
+
+
+/* Start Intro */
+    .intro {
+        width: 100%;
+        height: 100vh;
+        background-color: #581C1C;
+        background-color: #451818;
+        color: white;
+        padding: 40px 20px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 150px;
+    }
+
+    .intro .title {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 50px;
+    }
+
+    .intro .title span{
+        color:  var( --primary-color);
+        padding-left: 10px;
+    }
+
+    .intro .sub-title {
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 500;
+        font-size: 25px;
+        color: #B3B3B3;
+    }
+    
+    .intro .para {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #B3B3B3;
+    }
+    
+    .intro .para p {
+        width: 45%;
+        padding: 30px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 25px;
+    }
+
+    .intro .btn {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .intro .btn button {
+        width: 160px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 0px;
+        font-weight: 500;
+        font-size: 16px;
+        /* transition:  4s ease-out;
+        transition:  3s ease-in; */
+    }
+
+    .intro .btn button:first-child {
+        background-color: var(--primary-color);
+        color: white;
+        border-bottom: 5px solid gray;
+    }
+    
+    .intro .btn button:first-child:hover {
+        background-color: var(--primary-color-hover);
+    }
+    
+    .intro .btn button:last-child {
+        background-color: #451818;
+        color: white;
+        border: 1px solid gray;
+    }
+    
+    .intro .btn button:last-child:hover {
+        background-color: #aca7a7;
+        background-color: gray;
+        color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+    }
+
+    .social {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .social .social-body {
+        width: 400px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .social .social-body .social-centent {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social .social-body .social-centent div {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1E1313;
+        border: 1px solid rgb(99, 98, 98);
+        transition:  0.1s ease-in;
+        cursor: pointer;
+    }
+    
+    .social .social-body .social-centent div:hover {
+        width: 47px;
+        height: 47px;
+        border: 1px solid var(--primary-color);
+    }
+    
+    .social .social-body .social-centent div i {
+        font-size: 20px;
+        color: rgb(194, 191, 191);
+        transition:  0.1s ease-in;
+    }
+
+    .social .social-body .social-centent div:hover i {
+        font-size: 22px;
+        color: var(--primary-color);
+    
+    }
+/* End Intro */
+
+
+
+/* Start About */
 .container .about {
     width: 90%;
     display: flex;
@@ -111,7 +275,7 @@
 }
 
 .container .about .infos .info .cercle1 {
-  background-color: var(--background-secondary-color);
+    background-color: var(--background-secondary-color);
 }
 .container .about .infos .info .cercle2 {
   background-color: rgb(119, 94, 89);
@@ -119,6 +283,7 @@
 .container .about .infos .info .cercle3 {
   background-color: rgb(36, 35, 35);
 }
+/* End About */
 
 
 
