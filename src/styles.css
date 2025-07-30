@@ -68,6 +68,12 @@ body {
     background-color: var(--primary-color);
     border-radius: 4px;  
 }
+
+.section .description {
+    width: 560px;
+    border-radius: 4px;  
+    padding: 20px;
+}
 /* End Section Component  */
 
 
