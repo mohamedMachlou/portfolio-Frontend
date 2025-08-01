@@ -425,6 +425,10 @@
     align-items: center;
 }
 
+.skills .skills-blocks:hover {
+    border: 0.3px solid #e42121;
+}
+
 .skills .skills-blocks .title {
     width: 100%;
     height: 60px;
@@ -436,6 +440,10 @@
      display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.skills .skills-blocks:hover .title {
+    color: #e42121;
 }
 
 .skills .skills-blocks .skill {
@@ -460,27 +468,128 @@
 
 .skills .skills-blocks .skill .skill-bar {
     width: 280px;
-    height: 8px;
+    height: 9px;
     margin: 5px 5px;
     border-radius: 4px;
-    background-color: #2e2d2d;
-    border: 0.5px solid #6d6a6a;
+    background-color: #1F1F1F;
+    /* border: 0.5px solid #6d6a6a; */
     position: relative;
 }
 
 .skills .skills-blocks .skill .skill-bar .bar {
-    width: 200px;
-    height: 8px;
+    width: 250px;
+    height: 9px;
     margin: 5px 5px;
     border-radius: 4px;
     background-color: #e42121;
+    background: linear-gradient(90deg, #e42121 50%, #2A2727 90%);
     position: absolute;
     top: -5.5px;
     left: -5px
 }
 /* Start Skills & Technologies  */
 
+/* Start Projects  */
 
+    .sec-projects {
+        background-color: #0D0D0D;
+        color: white;
+    }
+
+    .projects {
+        width: 100%;
+        background-color: #868080;
+        background-color: #0D0D0D;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+        
+    }
+    
+    .projects .projects-body {
+        width: 80%;
+        min-height: 80vh;
+        background-color: #0D0D0D;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    
+    .projects .projects-body .project {
+        width: 300px;
+        height: 300px;
+        background-color: #1d1b1b;
+        border: 1px solid #554f4f;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    .projects .projects-body .project:hover {
+        border: 1px solid #e42121;
+    }
+    
+    .projects .projects-body .project img {
+        width: 280px;
+        border: 1px solid #554f4f;
+        border-radius: 8px;
+        background-color: #1d1b1b;
+    }
+    
+    .projects .projects-body .project .title {
+        width: 100%;
+        height: 40px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        text-align: start;
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        color: #e42121;
+        color: #6d6a6a;
+    }
+    
+    .projects .projects-body .project:hover .title{
+        color: #e42121;
+    }
+    
+    .projects .projects-body .project i  {
+         font-weight: 500;
+        font-size: 25px;
+        color: #868080;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        background-color: transparent;
+        position: absolute;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .projects .projects-body .project i:nth-child(3) {
+        bottom: 15px;
+        right: 50px;
+    }
+    .projects .projects-body .project i:nth-child(4) {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .projects .projects-body .project i:hover  {
+        color: #e42121;
+    }
+
+
+    
+/* End Projects  */
 
 
 /*//////////////////////////////////////////////////////////////*/

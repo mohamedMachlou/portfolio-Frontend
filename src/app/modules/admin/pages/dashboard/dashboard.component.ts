@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -7,7 +8,17 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  // Injection
+  router = inject(Router);
 
   
+
+
+
+
+  // Go To Link 
+  goToLink(link: string): void {
+  window.open(link, '_blank');
+}
 
 }
