@@ -140,6 +140,18 @@ body::-webkit-scrollbar {
   .container {
     width: 100%;
 }
+  .section .title {
+    font-weight: 500;
+    font-size: 25px;
+    margin-bottom: 5px;
+    
+}
+
+.section .description {
+    width: 360px;
+    border-radius: 4px;  
+    padding: 20px;
+}
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -149,6 +161,13 @@ body::-webkit-scrollbar {
     margin-right: 10px; */
     width: 100%;
   }
+
+  .section .description {
+    width: 560px;
+    border-radius: 4px;  
+    padding: 20px;
+}
+
 }
 
 /* Medium devices (tablets, 768px and up) */
