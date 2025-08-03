@@ -7,7 +7,7 @@
             <div class="logo">
                 MOHAMED <span>MACHLOU</span>
             </div>
-            <div class="nav">
+            <div class="nav" [ngClass]="this.openMenuStatus() ? 'show-links' : 'hide-links'">
                 <div class="links">
                     <ul>
                         <li class="li-active" > <div class="li-line line-active"></div> HOME</li>
@@ -30,6 +30,15 @@
                 </div>
             </div>
 
+            <!-- Start Open/Close Menu -->
+            <div [ngClass]="this.openMenuStatus() ? 'open-menu' : 'close-menu'" (click)="switchMenu()" >
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- End Open/Close Menu -->
+             
         </div>
     </div>
     <!-- End Nav bar -->
