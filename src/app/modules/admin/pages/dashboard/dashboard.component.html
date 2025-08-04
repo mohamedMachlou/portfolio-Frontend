@@ -1,21 +1,23 @@
 <div class="container">
     
     <!-- Start Nav bar -->
-    <div class="nav-bar">
-        <div class="navbar-body">
+    <div class="nav-bar" [ngClass]="this.isScrolled() ? 'show-nav': 'hide-nav'">
+        <div class="navbar-body" [ngClass]="this.isScrolled() ? 'show-nav': 'hide-nav'">
             
-            <div class="logo">
+            <div class="logo" (click)="scrollToSection('home')">
                 MOHAMED <span>MACHLOU</span>
             </div>
             <div class="nav" [ngClass]="this.openMenuStatus() ? 'show-links' : 'hide-links'">
                 <div class="links">
                     <ul>
-                        <li class="li-active" > <div class="li-line line-active"></div> HOME</li>
-                        <li>ABOUT</li>
-                        <li>SKILLS</li>
-                        <li>PROJECTS</li>
-                        <li>CONTACT</li>
+                        <li (click)="scrollToSection('home')" [ngClass]="{ 'li-active': activeSection === 'home' }"><div class="li-line line-active"></div>HOME</li>
+                        <li (click)="scrollToSection('about')" [ngClass]="{ 'li-active': activeSection === 'about' }">ABOUT</li>
+                        <li (click)="scrollToSection('skills')" [ngClass]="{ 'li-active': activeSection === 'skills' }">SKILLS</li>
+                        <li (click)="scrollToSection('projects')" [ngClass]="{ 'li-active': activeSection === 'projects' }">PROJECTS</li>
+                        <li (click)="scrollToSection('certificates')" [ngClass]="{ 'li-active': activeSection === 'certificates' }">CERTIFICATES</li>
+                        <li (click)="scrollToSection('contact')" [ngClass]="{ 'li-active': activeSection === 'contact' }">CONTACT</li>
                     </ul>
+
                 </div>
                 <div class="social">
                     <div class="icon">
@@ -44,7 +46,7 @@
     <!-- End Nav bar -->
 
     <!-- Start Intro -->
-    <div class="intro">
+    <div class="intro" id="home">
 
         <!-- Start Angles -->
         <div class=" top-left"></div>
@@ -103,7 +105,7 @@
     <!-- Start About -->
 
     <!-- Start Section About -->
-    <div class="section sec-about">
+    <div class="section sec-about" id="about">
         <div class="title">About Me</div>
         <div class="line"></div>
     </div>
@@ -141,7 +143,7 @@
                 </div>
             </div>
 
-            <div class="info">
+            <div class="info" id="about">
                 <div class="cercle cercle1"></div>
                 <div class="info-plus">📍 Lorem ipsum dolor sit amet.</div>
             </div>
@@ -159,7 +161,7 @@
     <!-- End About -->
 
      <!-- Start Section for Skills & Technologies -->
-    <div class="section sec-skills">
+    <div class="section sec-skills" id="skills">
         <div class="title">Skills & Technologies</div>
         <div class="line"></div>
         <div class="description">
@@ -174,9 +176,9 @@
          <div class="skills-body">
      
      
-             <div class="skills-blocks">
+             <div class="skills-blocks" id="skills">
                  <div class="title">Programming Languages</div>
-                 <div class="skill">
+                 <div class="skill" id="skills">
                      <div class="skill-infos">
                          <div class="skill-title">Python</div>
                          <div class="skill-porc">80%</div>
@@ -187,7 +189,7 @@
                          </div>
                      </div>
                  </div>
-                 <div class="skill">
+                 <div class="skill" id="skills">
                      <div class="skill-infos">
                          <div class="skill-title">Python</div>
                          <div class="skill-porc">80%</div>
@@ -197,7 +199,7 @@
                          
                      </div>
                  </div>
-                 <div class="skill">
+                 <div class="skill" id="skills">
                      <div class="skill-infos">
                          <div class="skill-title">Python</div>
                          <div class="skill-porc">80%</div>
@@ -210,7 +212,7 @@
              </div>
      
      
-             <div class="skills-blocks">
+             <div class="skills-blocks" id="skills">
                  <div class="title">Backend & Tools</div>
                  <div class="skill">
                      <div class="skill-infos">
@@ -246,7 +248,7 @@
              </div>
      
      
-             <div class="skills-blocks">
+             <div class="skills-blocks" id="skills">
                  <div class="title"> DevOps & Others </div>
                  <div class="skill">
                      <div class="skill-infos">
@@ -287,7 +289,7 @@
     <!-- End Skills & Technologies -->
 
      <!-- Start Section for Projects -->
-    <div class="section sec-projects">
+    <div class="section sec-projects" id="projects">
         <div class="title"> GitHub Projects </div>
         <div class="line"></div>
         <div class="description">
@@ -298,10 +300,10 @@
 
     <!-- Start Projects -->
 
-     <div class="projects">
+     <div class="projects" id="projects">
         <div class="projects-body">
 
-            <div class="project" >
+            <div class="project" id="projects">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Portfolio</div>
                 <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
@@ -337,7 +339,7 @@
                 <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
-            <div class="project" >
+            <div class="project" id="projects" >
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Portfolio</div>
                 <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
@@ -351,7 +353,7 @@
     <!-- End Projects -->
 
     <!-- Start Section for Projects -->
-    <div class="section sec-certificates">
+    <div class="section sec-certificates" id="certificates">
         <div class="title"> My Certificates </div>
         <div class="line"></div>
         <div class="description">
@@ -364,35 +366,51 @@
       <div class="certificates">
         <div class="certificates-body">
 
-            <div class="certificate" >
+            <div class="certificate" id="certificates">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Certificate</div>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
 
-            <div class="certificate" >
+            <div class="certificate"  id="certificates">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Certificate</div>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
 
-            <div class="certificate" >
+            <div class="certificate"  id="certificates">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Certificate</div>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
 
-            <div class="certificate" >
+            <div class="certificate"  id="certificates">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Certificate</div>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
 
-            <div class="certificate" >
+            <div class="certificate"  id="certificates">
                 <img src="/images/photo__Personnel--500_500.png" alt="">
                 <div class="title">Certificate</div>
                 <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+           
+
+           
             
           
         </div>
@@ -401,7 +419,7 @@
 
 
      <!-- Start Section for Contact -->
-    <div class="section sec-contact">
+    <div class="section sec-contact" id="contact">
         <div class="title"> Get In Touch </div>
         <div class="line"></div>
         <div class="description">
@@ -416,7 +434,7 @@
     <div class="contact">
         <div class="contact-body">
             
-            <div class="infos">
+            <div class="infos" id="contact">
                 <div class="title">Let's Connect</div>
                 <div class="description">Whether you have a project in mind, want to 
                     collaborate, or simply want to say hello, feel free to reach out
@@ -459,7 +477,7 @@
 
             </div>
 
-            <div class="form">
+            <div class="form" id="contact">
 
                 <div class="title">
                     Send Message

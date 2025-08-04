@@ -11,35 +11,60 @@ export class DashboardComponent {
   // Injection
   router = inject(Router);
 
-  // 
-  openMenuStatus = signal<boolean>(true)
-  
-  isScrolled = signal<boolean>(false)
-  
+  // Signals
+  openMenuStatus = signal<boolean>(true);
+  isScrolled = signal<boolean>(false);
+
+  // Sections
+  activeSection = 'home';
+  sections = ['home', 'about', 'skills', 'projects', 'certificates', 'contact'];
+
+  // Détecter scroll
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled.set(window.scrollY > 50);
-    if(this.isScrolled()){
-      console.log('ok ok ok')
+
+    for (let section of this.sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        const topOffset = 100;
+        if (rect.top <= topOffset && rect.bottom >= topOffset) {
+          this.activeSection = section;
+          break;
+        }
+      }
     }
   }
 
 
-// Switch Open/Close Menu
-switchMenu() {
+  //Start Scroll Vers Section spécifique
+  scrollToSection(sectionId: string) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
 
-  this.openMenuStatus.set(!this.openMenuStatus())
-  console.log('switch status to : ', this.openMenuStatus())
-
+  
 }
 
-closeMenu() {
-  this.openMenuStatus.set(false)
-}
+  //Start Scroll Vers Section spécifique
 
-  // Go To Link 
+
+
+
+  // Menu
+  switchMenu() {
+    this.openMenuStatus.set(!this.openMenuStatus());
+    console.log('switch status to : ', this.openMenuStatus());
+  }
+
+  closeMenu() {
+    this.openMenuStatus.set(false);
+  }
+
+  // Liens externes
   goToLink(link: string): void {
-  window.open(link, '_blank');
-}
-
+    window.open(link, '_blank');
+  }
 }
