@@ -9,14 +9,28 @@
             </div>
             <div class="nav" [ngClass]="this.openMenuStatus() ? 'show-links' : 'hide-links'">
                 <div class="links">
+                    
                     <ul>
-                        <li (click)="scrollToSection('home')" [ngClass]="{ 'li-active': activeSection === 'home' }"><div class="li-line line-active"></div>HOME</li>
-                        <li (click)="scrollToSection('about')" [ngClass]="{ 'li-active': activeSection === 'about' }">ABOUT</li>
-                        <li (click)="scrollToSection('skills')" [ngClass]="{ 'li-active': activeSection === 'skills' }">SKILLS</li>
-                        <li (click)="scrollToSection('projects')" [ngClass]="{ 'li-active': activeSection === 'projects' }">PROJECTS</li>
-                        <li (click)="scrollToSection('certificates')" [ngClass]="{ 'li-active': activeSection === 'certificates' }">CERTIFICATES</li>
-                        <li (click)="scrollToSection('contact')" [ngClass]="{ 'li-active': activeSection === 'contact' }">CONTACT</li>
+                        <li (click)="scrollToSection('home')" [ngClass]="{ 'li-active': activeSection === 'home' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'home' }"></div>HOME
+                        </li>
+                        <li (click)="scrollToSection('about')" [ngClass]="{ 'li-active': activeSection === 'about' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'about' }"></div>ABOUT
+                        </li>
+                        <li (click)="scrollToSection('skills')" [ngClass]="{ 'li-active': activeSection === 'skills' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'skills' }"></div>SKILLS
+                        </li>
+                        <li (click)="scrollToSection('projects')" [ngClass]="{ 'li-active': activeSection === 'projects' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'projects' }"></div>PROJECTS
+                        </li>
+                        <li (click)="scrollToSection('certificates')" [ngClass]="{ 'li-active': activeSection === 'certificates' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'certificates' }"></div>CERTIFICATES
+                        </li>
+                        <li (click)="scrollToSection('contact')" [ngClass]="{ 'li-active': activeSection === 'contact' }">
+                            <div class="li-line" [ngClass]="{ 'line-active': activeSection === 'contact' }"></div>CONTACT
+                        </li>
                     </ul>
+
 
                 </div>
                 <div class="social">
@@ -52,44 +66,42 @@
         <div class=" top-left"></div>
         <div class=" top-right"></div>
         <div class=" bottom-left"></div>
-        <div class=" bottom-right"></div>
+        <div class=" bottom-right"></div> 
         <!-- End Angles -->
 
-        <div class="title">HI, I'M <span>MACHLOU MOHAMED</span></div>
-        <div class="sub-title">🚀 ANGULAR/NODEJS FULL STACK DEVELOPER</div>
+        <div class="title">HI, I'M <span> {{ this.admin().firstName }} {{ this.admin().lastName }} </span></div>
+        <div class="sub-title">🚀 {{ this.admin().specialty }} {{ this.admin().jobTitle }}</div>
         <div class="para">
             <p>
-                Passionate about building modern web apps using React, 
-                Node.js,Next.js and MongoDB. Focused on writing clean code, 
-                solving real problems, and constantly learning.
-                Open to internships, freelance work, and exciting tech challenges!
+                {{ this.admin().description }}
             </p>
         </div>
         <div class="btn">
-            <button type="button" >VIEW MY WORK</button>
-            <button type="button" >DOWNLOAD CV</button>
+            <button type="button" (click)="scrollToSection('projects')" >VIEW MY WORK</button>
+            <button type="button" (click)="goToLink(this.downloadcv())">DOWNLOAD CV</button>
         </div>
         
         <div class="social">
             <div class="social-body">
-                <div class="social-centent">
-                    <div class="github">
+
+                <div class="social-centent" (click)="goToLink(this.github())">
+                    <div class="github"  >
                         <i class="fa-brands fa-github"></i>
                     </div>
                 </div>
-                <div class="social-centent">
+                <div class="social-centent" (click)="goToLink(this.linkedin())" >
                     <div class="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </div>
                 </div>
-                <div class="social-centent">
+                <div class="social-centent" (click)="goToLink(this.instagram())">
                     <div class="instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </div>
                 </div>
                 <div class="social-centent">
-                    <div class="contact-icon">
-                    <i class="fa-brands fa-linkedin-in"></i>
+                    <div class="contact-icon" (click)="scrollToSection('contact')">
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
                 </div>
                 
@@ -115,7 +127,7 @@
         <div class="image">
             <div class="back-one">
                 <div class="back-two">
-                    <img src="/images/photo__Personnel--500_500.png" alt="">
+                    <img src="/images/Perso Normal 500_500.png" alt="">
                 </div>
             </div>
         </div>
