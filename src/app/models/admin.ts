@@ -3,6 +3,7 @@ export interface Admin {
   firstName: string;
   lastName: string;
   description: string;
+  diplome: string;
   jobTitle: string;
   experience: string;
   specialty: string;

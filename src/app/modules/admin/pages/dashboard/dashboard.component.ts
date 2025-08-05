@@ -2,6 +2,8 @@ import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from '../../../core/services/admin.service';
 import { Admin } from '../../../../models/admin';
+import { ProgrammingLanguageService } from '../../../core/services/programming-language.service';
+import { Programming_Languages } from '../../../../models/programming_languages';
 
 @Component({
   selector: 'dashboard',
@@ -15,12 +17,14 @@ export class DashboardComponent implements OnInit {
 
   // Services
   adminService = inject(AdminService);
+  progLangServices = inject(ProgrammingLanguageService)
 
   // Variables
   admin = signal<Admin>({
   firstName: '',
   lastName: '',
   description: '',
+  diplome: '',
   jobTitle: '',
   experience: '',
   specialty: '',
@@ -46,6 +50,7 @@ export class DashboardComponent implements OnInit {
   github = signal<string>('');
   linkedin = signal<string>('');
   instagram = signal<string>('');
+  progLanguages = signal<Programming_Languages[]>([]);
 
   // Sections
   activeSection = 'home';
@@ -59,10 +64,15 @@ ngOnInit(): void {
     this.adminService.getAllAdmins().subscribe(admins => {
       this.admin.set(admins[0]);
     });
-    console.log(this.admin());
+
+    // Load Programming Languages
+    this.progLangServices.getAllProgLanguages().subscribe((prog_lang) => {
+      this.progLanguages.set(prog_lang)
+    })
+    console.log(this.progLanguages())
+
 
     // Get Social Links
-     // Get Social Links
     this.downloadcv.set(this.admin().downloadcv!);
     this.github.set(this.admin().github!);
     this.linkedin.set(this.admin().linkedin!);

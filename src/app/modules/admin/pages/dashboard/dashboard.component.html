@@ -134,14 +134,11 @@
         <div class="infos">
 
             <div class="title">
-                <span> 🚀 FullStack developer</span>
+                <span> 🚀 {{ this.admin().jobTitle }}</span>
             </div>
 
             <div class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ratione eum iure, dolorem nam ea, sunt excepturi quis debitis
-                Ratione eum iure, dolorem nam ea, sunt excepturi quis debitis
-                Ratione eum iure, dolorem nam ea, sunt excepturi quis debitis
+                {{ this.admin().description }}
             
             </div>
             <div class="projects-intership">
@@ -157,15 +154,15 @@
 
             <div class="info" id="about">
                 <div class="cercle cercle1"></div>
-                <div class="info-plus">📍 Lorem ipsum dolor sit amet.</div>
+                <div class="info-plus">📍 Based in {{ this.admin().addresse }}</div>
             </div>
             <div class="info">
                 <div class="cercle cercle2"></div>
-                <div class="info-plus">🎓 Lorem ipsum dolor sit amet.</div>
+                <div class="info-plus">🎓 {{ this.admin().diplome }}</div>
             </div>
             <div class="info">
                 <div class="cercle cercle3"></div>
-                <div class="info-plus">🧠 Lorem ipsum dolor sit amet.</div> 
+                <div class="info-plus">🧠 Learning {{ this.admin().jobTitle }}</div> 
             </div>
 
         </div>
@@ -189,37 +186,22 @@
      
      
              <div class="skills-blocks" id="skills">
-                 <div class="title">Programming Languages</div>
+
+                <div class="title">Programming Languages</div>
                  <div class="skill" id="skills">
+
+                @for(proglang of progLanguages(); track proglang){
                      <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
+                         <div class="skill-title"> {{ proglang.skill }} </div>
+                         <div class="skill-porc">{{ proglang.skill_prc }}%</div>
                      </div>
                      <div class="skill-bar">
                          <div class="skill-bar-body">
-                             <div class="bar"></div>
+                             <div class="bar" [style.width]= `${proglang.skill_prc_width}px` ></div>
                          </div>
                      </div>
-                 </div>
-                 <div class="skill" id="skills">
-                     <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="bar"></div>
-                         
-                     </div>
-                 </div>
-                 <div class="skill" id="skills">
-                     <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="bar"></div>
-     
-                     </div>
+                 }
+
                  </div>
              </div>
      

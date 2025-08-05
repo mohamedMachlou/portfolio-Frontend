@@ -617,7 +617,7 @@
 }
 
 .skills .skills-blocks .skill .skill-bar .bar {
-    width: 250px;
+    /* width: 250px; */
     height: 9px;
     margin: 5px 5px;
     border-radius: 4px;
