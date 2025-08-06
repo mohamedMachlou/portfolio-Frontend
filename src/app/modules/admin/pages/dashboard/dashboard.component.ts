@@ -6,6 +6,8 @@ import { Admin } from '../../../../models/admin';
 import { ProgrammingLanguageService } from '../../../core/services/programming-language.service';
 import { Programming_Languages } from '../../../../models/programming_languages';
 import { Framework } from '../../../../models/framework';
+import { DevopsService } from '../../../core/services/devops.service';
+import { Devops_Other } from '../../../../models/Devops_other';
 
 @Component({
   selector: 'dashboard',
@@ -21,6 +23,7 @@ export class DashboardComponent implements OnInit {
   adminService = inject(AdminService);
   progLangServices = inject(ProgrammingLanguageService)
   frameworkService = inject(FrameworkService)
+  desvopsService = inject(DevopsService)
 
   // Variables
   admin = signal<Admin>({
@@ -55,6 +58,7 @@ export class DashboardComponent implements OnInit {
   instagram = signal<string>('');
   progLanguages = signal<Programming_Languages[]>([]);
   backends = signal<Framework[]>([]);
+  allDevops = signal<Devops_Other[]>([]);
 
   // Sections
   activeSection = 'home';
@@ -78,7 +82,12 @@ ngOnInit(): void {
     this.frameworkService.getAllFrameworks().subscribe((backend_Outil) => {
       this.backends.set(backend_Outil)
     })
-    console.log(this.backends())
+
+    // Load Devops
+    this.desvopsService.getAllDevops().subscribe((devops) => {
+      this.allDevops.set(devops)
+    })
+    console.log(this.allDevops())
 
 
     // Get Social Links

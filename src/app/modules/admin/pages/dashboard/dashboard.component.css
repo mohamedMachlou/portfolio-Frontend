@@ -548,13 +548,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
 }
 
 .skills .skills-blocks {
     width: 340px;
-    height: 400px;
+    min-height: 400px;
     padding-top: 20px;
     border: 0.5px solid #6d6a6a;
     border-radius: 7px;
@@ -597,6 +597,10 @@
     font-size: 15px;
 }
 
+.skills .skills-blocks .skill:last-child {
+    margin-bottom: 30px;
+}
+
 .skills .skills-blocks .skill .skill-infos {
     width: 100%;
     padding: 5px 30px;
@@ -622,7 +626,7 @@
     margin: 5px 5px;
     border-radius: 4px;
     background-color: #e42121;
-    background: linear-gradient(90deg, #e42121 50%, #2A2727 90%);
+    background: linear-gradient(90deg, #e42121 40%, #3b3131 95%);
     position: absolute;
     top: -5.5px;
     left: -5px
