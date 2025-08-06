@@ -667,14 +667,16 @@
     
     .projects .projects-body .project {
         width: 300px;
-        height: 300px;
+        height: 230px;
         background-color: #1d1b1b;
         border: 1px solid #554f4f;
         border-radius: 8px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
+        padding-top: 10px;
     }
     
     .projects .projects-body .project:hover {
@@ -686,6 +688,7 @@
         border: 1px solid #554f4f;
         border-radius: 8px;
         background-color: #1d1b1b;
+        margin-bottom: 30px;
     }
     
     .projects .projects-body .project .title {
@@ -740,19 +743,21 @@
 
     .sec-certificates {
         background-color: #0D0D0D;
+        background-color: #1D1B1B;
         color: white;
     }
-
+    
     .certificates {
         width: 100%;
         background-color: #868080;
         background-color: #0D0D0D;
+        background-color: #1D1B1B;
         color: white;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-         border: none;
+        border: none;
         outline: none;
     }
     
@@ -760,6 +765,7 @@
         width: 80%;
         min-height: 80vh;
         background-color: #0D0D0D;
+        background-color: #1D1B1B;
         padding: 20px;
         display: flex;
         flex-wrap: wrap;
