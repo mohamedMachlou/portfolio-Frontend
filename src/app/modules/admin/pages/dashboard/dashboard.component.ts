@@ -1,9 +1,11 @@
+import { FrameworkService } from './../../../core/services/framework.service';
 import { Component, HostListener, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from '../../../core/services/admin.service';
 import { Admin } from '../../../../models/admin';
 import { ProgrammingLanguageService } from '../../../core/services/programming-language.service';
 import { Programming_Languages } from '../../../../models/programming_languages';
+import { Framework } from '../../../../models/framework';
 
 @Component({
   selector: 'dashboard',
@@ -18,6 +20,7 @@ export class DashboardComponent implements OnInit {
   // Services
   adminService = inject(AdminService);
   progLangServices = inject(ProgrammingLanguageService)
+  frameworkService = inject(FrameworkService)
 
   // Variables
   admin = signal<Admin>({
@@ -51,6 +54,7 @@ export class DashboardComponent implements OnInit {
   linkedin = signal<string>('');
   instagram = signal<string>('');
   progLanguages = signal<Programming_Languages[]>([]);
+  backends = signal<Framework[]>([]);
 
   // Sections
   activeSection = 'home';
@@ -69,7 +73,12 @@ ngOnInit(): void {
     this.progLangServices.getAllProgLanguages().subscribe((prog_lang) => {
       this.progLanguages.set(prog_lang)
     })
-    console.log(this.progLanguages())
+
+    // Load Backend Frameworks & Outils
+    this.frameworkService.getAllFrameworks().subscribe((backend_Outil) => {
+      this.backends.set(backend_Outil)
+    })
+    console.log(this.backends())
 
 
     // Get Social Links

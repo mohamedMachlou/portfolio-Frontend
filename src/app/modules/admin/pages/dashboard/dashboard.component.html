@@ -184,62 +184,50 @@
      <div class="skills">
          <div class="skills-body">
      
-     
-             <div class="skills-blocks" id="skills">
+            @if(progLanguages().length != 0) {
 
-                <div class="title">Programming Languages</div>
-                 <div class="skill" id="skills">
-
-                @for(proglang of progLanguages(); track proglang){
-                     <div class="skill-infos">
-                         <div class="skill-title"> {{ proglang.skill }} </div>
-                         <div class="skill-porc">{{ proglang.skill_prc }}%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="skill-bar-body">
-                             <div class="bar" [style.width]= `${proglang.skill_prc_width}px` ></div>
+                <div class="skills-blocks" id="skills">
+    
+                    <div class="title">Programming Languages</div>
+                     <div class="skill" id="skills">
+    
+                    @for(proglang of progLanguages(); track proglang){
+                         <div class="skill-infos">
+                             <div class="skill-title"> {{ proglang.skill }} </div>
+                             <div class="skill-porc">{{ proglang.skill_prc }}%</div>
                          </div>
-                     </div>
-                 }
-
-                 </div>
-             </div>
-     
-     
-             <div class="skills-blocks" id="skills">
-                 <div class="title">Backend & Tools</div>
-                 <div class="skill">
-                     <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="skill-bar-body">
-                             <div class="bar"></div>
+                         <div class="skill-bar">
+                             <div class="skill-bar-body">
+                                 <div class="bar" [style.width]= `${proglang.skill_prc_width}px` ></div>
+                             </div>
                          </div>
+                     }
+    
                      </div>
                  </div>
-                 <div class="skill">
-                     <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="bar"></div>
-                         
-                     </div>
-                 </div>
-                 <div class="skill">
-                     <div class="skill-infos">
-                         <div class="skill-title">Python</div>
-                         <div class="skill-porc">80%</div>
-                     </div>
-                     <div class="skill-bar">
-                         <div class="bar"></div>
+            }
      
-                     </div>
+             @if(backends().length != 0) {
+
+                 <div class="skills-blocks" id="skills">
+                     <div class="title">Backend & Tools</div>
+                    @for(backend of backends(); track backend){
+
+                        <div class="skill">
+                            <div class="skill-infos">
+                                <div class="skill-title">{{ backend.skill }}</div>
+                                <div class="skill-porc">{{ backend.skill_prc}}%</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-body">
+                                    <div class="bar" [style.width]= `${backend.skill_prc_width}px`></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+    
                  </div>
-             </div>
+             }
      
      
              <div class="skills-blocks" id="skills">
