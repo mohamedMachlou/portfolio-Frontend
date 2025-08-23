@@ -271,18 +271,50 @@
      <div class="projects" id="projects">
         <div class="projects-body">
 
-        @for(project of allProjects(); track project) {
-
-            <div class="project" id="projects"> 
-                <img [src]="project.photo ? 'http://localhost:3000/projectphoto/' + project.photo : '/images/photo__Personnel--500_500.png'" alt="">
-
-                <div class="title"> {{ project.title }} </div>
+            <div class="project" id="projects">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
                 <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
-                <i class="fa-brands fa-staylinked" (click)="goToLink(project.link)"></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
             </div>
-        }    
-         
-        
+            <div class="project" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            <div class="project" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            <div class="project" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            <div class="project" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            <div class="project" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            <div class="project" id="projects" >
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Portfolio</div>
+                <i class="fa-brands fa-github" (click)="goToLink('https://github.com/mohamedMachlou')" ></i>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+            
+
         </div>
     </div>
     
@@ -302,16 +334,52 @@
       <div class="certificates">
         <div class="certificates-body">
 
-            @for (certificate of allCertificates(); track certificate) {
+            <div class="certificate" id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
 
-                <div class="certificate" id="certificates">
-                    <img [src]="'http://localhost:3000/certificatephoto/' + certificate.photo" alt="">
-                    <div class="title"> {{ certificate.title }} </div>
-                    <i class="fa-brands fa-staylinked" (click)="goToLink(certificate.link)"></i>
-                </div>
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
 
-            }
- 
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+            <div class="certificate"  id="certificates">
+                <img src="/images/photo__Personnel--500_500.png" alt="">
+                <div class="title">Certificate</div>
+                <i class="fa-brands fa-staylinked" (click)="goToLink('https://www.facebook.com/')"></i>
+            </div>
+
+           
+
+           
+            
           
         </div>
     </div>

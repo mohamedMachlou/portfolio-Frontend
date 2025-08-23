@@ -8,12 +8,6 @@ import { Programming_Languages } from '../../../../models/programming_languages'
 import { Framework } from '../../../../models/framework';
 import { DevopsService } from '../../../core/services/devops.service';
 import { Devops_Other } from '../../../../models/Devops_other';
-import { ProjectService } from '../../../core/services/project.service';
-import { CertificateService } from '../../../core/services/certificate.service';
-import { ServiceService } from '../../../core/services/service.service';
-import { Project } from '../../../../models/project';
-import { Certificate } from '../../../../models/certificate';
-import { Service } from '../../../../models/service';
 
 @Component({
   selector: 'dashboard',
@@ -30,9 +24,6 @@ export class DashboardComponent implements OnInit {
   progLangServices = inject(ProgrammingLanguageService)
   frameworkService = inject(FrameworkService)
   desvopsService = inject(DevopsService)
-  projectService = inject(ProjectService)
-  certificateService = inject(CertificateService)
-  serviceService = inject(ServiceService)
 
   // Variables
   admin = signal<Admin>({
@@ -68,9 +59,6 @@ export class DashboardComponent implements OnInit {
   progLanguages = signal<Programming_Languages[]>([]);
   backends = signal<Framework[]>([]);
   allDevops = signal<Devops_Other[]>([]);
-  allProjects = signal<Project[]>([]);
-  allCertificates = signal<Certificate[]>([]);
-  allServices = signal<Service[]>([]);
 
   // Sections
   activeSection = 'home';
@@ -99,28 +87,15 @@ ngOnInit(): void {
     this.desvopsService.getAllDevops().subscribe((devops) => {
       this.allDevops.set(devops)
     })
+    console.log(this.allDevops())
 
-    // Load Projects
-    this.projectService.getAllProjects().subscribe((projects) => {
-      this.allProjects.set(projects)
-    })
-
-    // Load Certificates
-    this.certificateService.getAllCertificates().subscribe((certificates) => {
-      this.allCertificates.set(certificates)
-    })
-
-    // Load Services
-    this.serviceService.getAllServices().subscribe((Services) => {
-      this.allServices.set(Services)
-    })
-    console.log(this.allProjects())
 
     // Get Social Links
     this.downloadcv.set(this.admin().downloadcv!);
     this.github.set(this.admin().github!);
     this.linkedin.set(this.admin().linkedin!);
     this.instagram.set(this.admin().instagram!);
+  
 }
 
 
